@@ -64,6 +64,12 @@ function Add() {
                 button.addEventListener("click",()=>{
                     user_records.map((e,i)=>{
                         table.deleteRow(i)
+                        deltotalexpense = totalexpense -= e.price
+                        totalbalance = budget - deltotalexpense
+                        console.log(totalexpense)
+                        console.log(totalbalance)
+                        totalExpense.innerHTML = deltotalexpense
+                        totalBalance.innerHTML = totalbalance
                     })
                     localStorage.removeItem(title)
                     // alert('success')
