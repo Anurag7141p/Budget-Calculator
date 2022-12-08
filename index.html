@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+            <h1></h1>
+            <h2 style="color: white; font-family: 'Tangerine', serif;
+        font-size: 48px;">My budget planner</h2><br><br>
+
+
+        </div>
+    </nav>
+
+
+
+
+
+    <!-- ------------------------------------------------------------------------------------------------------------------ -->
+    <section>
+        <div id="first_row">
+            <div id="budget">
+                <h2 id="Budget_head">Budget</h2>
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto" id="Budget_textfield">
+                        <input type="text" id="budget_price" class="form-control" aria-describedby="passwordHelpInline"
+                            placeholder="Budget">
+                    </div>
+                </div>
+                <button class="button-22" type="submit" onclick="setBudget()">Set Budget</button>
+
+
+            </div>
+            <div id="expense">
+                <h2 id="Expense_head">Expense</h2>
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto" id="Expense_textfield">
+                        <input type="text" id="expenseTitle" class="form-control" aria-describedby="passwordHelpInline"
+                            placeholder="Description">
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto" id="Expense_textfield">
+                        <input type="text" id="expensePrice" class="form-control" aria-describedby="passwordHelpInline"
+                            placeholder="Amount">
+                    </div>
+                </div>
+                <button class="button-22" type="submit" onclick="Add()"> + Add</button>
+
+            </div>
+        </div>
+    </section>
+    <!-------------------------------------------------------------------------------------------------->
+
+    <section>
+        <div id="total_sec">
+            <div id="total_sec1">
+                <h4>Total budget</h4>
+                <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAACzElEQVRoge3YT2sdVRgG8N+tWqI1rU1ipKSY2liLoJAophIUUWix4kLCpV+hG1fiwq39BhbEvTspIi6U1hYhxE3VUnRRbFWQ/jGlNhIikaaLxsWcMYfbmXsz9ya5d8I88DJn5rznzPOc886cc14qVKhQoaz4Fisls9mUfC0SsrI+47HpqMGDeRUZ6JbQNfHZtglENgWVkBZYxklMYkewyfBseYPe+T/SP0Gr+lb2J8ab9DOBuQL9Fea7HkKW8ULw34tTWAz2OQ6Euhdxt5eFfByJmM+on8dI8Pmkl4VMBd9TTXw+Cz5TvSbkGuroj3wXm/gvRH79mMaVbgu5hoEGv5ebkEptsqHNAK53U0g91L0VRK0lVBoH4mjo41g3haTh1I6I1K6GPnZ1IqTTBTFvH9RVtDMj06HuqGRk25mNN0Mf9RyfwnzbEXIZg5HPoQIiXoraDeDXToR0GlrP4CfJh7pTsVCrhTZ1nMfTnRDJOliV7TxSo9rG9x4qIb2GLSNky6SD4hn5rktEOsFsa5eSYjt+0f4OdiMsC7NyZiHONJbhG3klryJr+d8hmSHYHa4P4dFQfiSUh4INYhiPh/JQuI83k+0gi1vuNip9sB0/42BG4wXcwb+Ss/gy/sFSKP+Nv3Abt3Azut+D/RiLrmN4KodojD73J/NyhawltB5r8cJmmMPvkZ3GD5JBGJfkwFI7iAeitrfxDb7Cl5JUUi6yRqUPD0flXZLzQmpDGMU+PBmuRcXeCIK+xzlckBybX8MbeB3PR/zu4mu804T3umAER/AePtU8vZNlc5K88ETU5xM4jjPuz0puKobwNj7CJZ39dofxAX7DzIayXgNG8T4uKiYkd+3oBTyLE7LP6SMNvl0Jp6KoScJvxirhJXwoWc8oiZAYh/CFVeJ/4LASCknxquR3vIJ7SiyE5HjxrmQ3UWohKZ7DjzjbbSIViuI/jo/p2+p64D0AAAAASUVORK5CYII=">
+                <h3 id="totalBudget">0</h3>
+            </div>
+            <div id="total_sec1">
+                <h4>Expenses</h4>
+                <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA3CAYAAACo29JGAAAABmJLR0QA/wD/AP+gvaeTAAABaUlEQVRoge3Zv0rDQADH8a8i1PoPBH0EFRxcfAgVdNXWB3Bx8xHcnH0S0UFfpIirgmB0UdDq0DqcouhdyCW55hJ+H7jlkobfrwlNuQMRERERGaGxDOfMAVvACjAVNk4mr8A1cAk8F7nQPvAEDCMcj0A3b7EuMIigRNoYAB3fYjNAEkH4LOMBmLaVGHeU2wQW/L6PyiwCG7YDrnJL4bIEsWybdJVrBQwSwqRt0vUqaLs+EKk+8FZ1CBFpMNev5Q6wPcogBV0A538nJxwnrwMHQeOU6x5LOddLvBFUrq5Urq5Urq5c77k0PeAUs3D0bR44BNbKCFUW33JDzBLEreXYGXCX45rB+D6WH5h/AzYJZk0xGr7lWsAJ/xdn28AxZgE3GnkeoaOvET3XnXsfaYri+rZJV7mbgEFC8MrbiBXnNB3qsVew61vsd8FY72AC7KWFz7I/N4tZi18lnv25HnAFvFScRURERER+fAJDABccH42iSQAAAABJRU5ErkJggg==">
+                <h3 id="totalExpense" style="color: rgb(167, 20, 20);">0</h3>
+
+            </div>
+            <div id="total_sec1">
+                <h4>Balance</h4>
+                <img
+                    src="data:image/png;base64,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">
+                <h3 id="totalBalance">0</h3>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------------------------------->
+
+    <section>
+        <div id="display">
+            <h5 id="display_head">Expense List</h5>
+            <div style="padding-bottom: 20px;">
+                <table id="table_main">
+                    <thead>
+                        <tr>
+                            <!-- <th></th>
+                            <th></th>
+                            <th></th> -->
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+<script src="budget.js"></script>
+
+</html>
